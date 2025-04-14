@@ -17,7 +17,7 @@ LEFT JOIN Orders o ON c.Customer_ID= o.Customer_ID
 WHERE o.Customer_ID IS NULL;
 
 -- Query #3 " Thank you! Now, Can you show us the products that haven't been bought so we can discard them?"
-SELECT * FROM OrderedItems oi
+SELECT p.Product_ID, Product_Name, Category_ID, p.Price, Stock FROM OrderedItems oi
 RIGHT JOIN Products p ON oi.Product_ID= p.Product_ID
 WHERE oi.Product_ID IS NULL;
 
